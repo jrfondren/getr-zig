@@ -50,5 +50,6 @@ pub fn main() !void {
       try report(count);
    } else {
       warn("usage: {} <n> <command> [<args> ....]\n", std.mem.toSliceConst(u8, argv[0]));
+      std.os.exit(1);
    }
 }
