@@ -11,8 +11,9 @@
 
 ## build
 ```
-make
+zig build
 ```
+This will place the binary in `zig-cache/bin`. It can also be run with `zig build run [...remaining args...]`
 
 ## usage and examples
 ```
