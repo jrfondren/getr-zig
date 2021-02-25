@@ -3,8 +3,6 @@ pub const Timeval = extern struct {
     usec: u64,
 };
 
-const GetrusageError = error{UnknownError};
-
 pub const Who = extern enum {
     SELF = 0,
     CHILDREN = -1,
@@ -30,7 +28,7 @@ pub const Usage = extern struct {
 
     pub fn Get(self: *Usage, who: Who) !void {
         if (0 == getrusage(who, self)) return;
-        return GetrusageError.UnknownError;
+        return error.GetrusageError;
     }
 };
 

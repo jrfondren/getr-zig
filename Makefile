@@ -1,4 +1,4 @@
-OPT=--release-fast
+OPT=ReleaseSafe
 
 all:: getr
 
@@ -7,5 +7,5 @@ clean::
 	rm -rf zig-cache
 
 getr: getr.zig rusage.zig
-	zig build-exe $< --library c $(OPT)
+	zig build-exe $< --library c -O $(OPT)
 
